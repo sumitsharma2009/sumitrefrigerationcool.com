@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sumit Refrigeration Cool - Appliance Repair Services</title>
+
+    <!-- Local Business SEO Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Sumit Refrigeration Cool",
+            "founder": {
+                "@type": "Person",
+                "name": "Jay Prakash Sharma"
+            },
+            "manager": {
+                "@type": "Person",
+                "name": "Vivek Kumar Sharma"
+            },
+            "image": "ac-service.jpg",
+            "telephone": "+917004185195",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Janta Market, Near Gramin Bank, Chhota Govindpur",
+                "addressLocality": "Jamshedpur",
+                "addressRegion": "Jharkhand",
+                "postalCode": "831015",
+                "addressCountry": "IN"
+            },
+            "priceRange": "₹₹"
+        }
+    </script>
+
+    <style>
+        /* ─────────── RESET & VARIABLES ─────────── */
+        :root {
+            --primary: #0066cc;
+            --primary-dark: #004c99;
+            --primary-light: #e6f0ff;
+            --secondary: #25d366;
+            --secondary-dark: #1da851;
+            --dark: #1a1a2e;
+            --light: #f4f7f6;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --gray-light: #e5e7eb;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --radius: 16px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ─────────── SCROLLBAR ─────────── */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        /* ─────────── HEADER & NAV ─────────── */
+        header {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 102, 204, 0.08);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.8rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .logo span {
+            color: var(--dark);
+            font-weight: 300;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color var(--transition);
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width var(--transition);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.6rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: none;
+            transition: all var(--transition);
+            text-align: center;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(0, 102, 204, 0.3);
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 102, 204, 0.4);
+        }
+        .btn-whatsapp {
+            background: var(--secondary);
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+        }
+        .btn-whatsapp:hover {
+            background: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--dark);
+            padding: 0.2rem 0.5rem;
+        }
+
+        /* ─────────── HERO ─────────── */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%),
+                url('ac-service.jpg') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+            padding: 7rem 2rem 5rem;
+            position: relative;
+            isolation: isolate;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(0, 102, 204, 0.15), transparent 70%);
+            z-index: -1;
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+        .hero h1 span {
+            color: #66b3ff;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+        .hero-badges span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(4px);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .hero .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ─────────── SECTION TITLES ─────────── */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            font-size: 1.05rem;
+        }
+
+        /* ─────────── SERVICES ─────────── */
+        .services {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        .service-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            transition: transform var(--transition);
+        }
+        .service-card:hover img {
+            transform: scale(1.03);
+        }
+        .service-content {
+            padding: 1.5rem;
+        }
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.4rem;
+            font-size: 1.2rem;
+        }
+        .service-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        .service-tag {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.8rem;
+            border-radius: 50px;
+            margin-top: 0.6rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* ─────────── GALLERY ─────────── */
+        .gallery {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+        }
+        .gallery-item {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: all var(--transition);
+            cursor: pointer;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent 40%, rgba(0, 0, 0, 0.7));
+            pointer-events: none;
+        }
+        .gallery-label {
+            position: absolute;
+            left: 1.2rem;
+            bottom: 1.2rem;
+            z-index: 2;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .gallery-label span {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 400;
+            opacity: 0.85;
+        }
+
+        /* ─────────── WHY CHOOSE US ─────────── */
+        .why-choose-us {
+            background: var(--white);
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--gray-light);
+            border-bottom: 1px solid var(--gray-light);
+        }
+        .why-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .why-card {
+            background: var(--light);
+            padding: 2rem 1.5rem;
+            border-radius: var(--radius);
+            text-align: center;
+            transition: all var(--transition);
+            border-bottom: 4px solid var(--primary);
+        }
+        .why-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+        .why-card .icon {
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+        }
+        .why-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+        }
+        .why-card p {
+            color: var(--gray);
+            font-size: 0.92rem;
+        }
+
+        .team-info {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-light);
+        }
+        .team-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        .team-info .team-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem 3rem;
+            margin-top: 0.8rem;
+        }
+        .team-info .team-grid div {
+            background: var(--light);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 500;
+        }
+        .team-info .team-grid div small {
+            font-weight: 400;
+            color: var(--gray);
+            display: block;
+            font-size: 0.8rem;
+        }
+
+        /* ─────────── CONTACT ─────────── */
+        .contact {
+            background: var(--white);
+            padding: 4rem 2rem;
+        }
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .contact-info p strong {
+            color: var(--dark);
+        }
+        .contact-info .contact-icon {
+            font-size: 1.2rem;
+            width: 1.8rem;
+            text-align: center;
+        }
+
+        .contact-cta {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: var(--radius);
+            text-align: center;
+        }
+        .contact-cta h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .contact-cta p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ─────────── MODAL ─────────── */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+        .modal-content {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            max-width: 520px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+            animation: modalIn 0.3s ease;
+        }
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            font-size: 1.8rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: var(--gray);
+            transition: color var(--transition);
+        }
+        .close-modal:hover {
+            color: var(--dark);
+        }
+        .modal-content h2 {
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+        .modal-content .modal-sub {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--gray-light);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border var(--transition);
+            background: var(--white);
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.1);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* ─────────── FLOATING WHATSAPP ─────────── */
+        .floating-whatsapp {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 1500;
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--secondary);
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            transition: all var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        .floating-whatsapp:hover {
+            transform: scale(1.08);
+            box-shadow: 0 16px 40px rgba(37, 211, 102, 0.5);
+        }
+        .floating-whatsapp .tooltip {
+            position: absolute;
+            right: 72px;
+            background: var(--dark);
+            color: #fff;
+            padding: 0.3rem 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition);
+        }
+        .floating-whatsapp:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* ─────────── FOOTER ─────────── */
+        footer {
+            background: var(--dark);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+        footer strong {
+            color: #fff;
+        }
+        footer .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        footer .footer-socials a {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.3rem;
+            transition: color var(--transition);
+        }
+        footer .footer-socials a:hover {
+            color: #fff;
+        }
+
+        /* ─────────── RESPONSIVE ─────────── */
+        @media (max-width: 900px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(12px);
+                padding: 1.5rem 2rem;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+                gap: 1.2rem;
+                border-top: 1px solid var(--gray-light);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links a {
+                font-size: 1.05rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .hero-badges {
+                gap: 0.8rem;
+            }
+            .hero-badges span {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+            .gallery-item {
+                height: 180px;
+            }
+            .contact-container {
+                gap: 2rem;
+            }
+            .modal-content {
+                padding: 1.8rem;
+            }
+            .floating-whatsapp {
+                width: 54px;
+                height: 54px;
+                font-size: 1.6rem;
+                right: 16px;
+                bottom: 16px;
+            }
+            .floating-whatsapp .tooltip {
+                display: none;
+            }
+        }
+
+        @media (max-width: 500px) {
+            nav {
+                padding: 0.6rem 1rem;
+            }
+            .logo {
+                font-size: 1.1rem;
+            }
+            .hero {
+                padding: 5rem 1rem 3.5rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .services {
+                padding: 0 1rem;
+                margin: 2.5rem auto;
+            }
+            .gallery {
+                padding: 0 1rem;
+                margin: 2.5rem auto;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-item {
+                height: 200px;
+            }
+            .why-choose-us {
+                padding: 2.5rem 1rem;
+            }
+            .contact {
+                padding: 2.5rem 1rem;
+            }
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════ HEADER ═══════ -->
+    <header>
+        <nav>
+            <a href="#" class="logo">⚡ Sumit <span><B>Refrigeration Cool</B></span></a> 
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="btn btn-primary" onclick="openModal()">📞 Book Service</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ═══════ HERO ═══════ -->
+    <section class="hero" id="home">
+        <h1>Reliable <span>Appliance</span> Repair</h1>
+        <p>Expert repair &amp; maintenance for ACs, refrigerators, washing machines, RO systems, and more in Jamshedpur. Quality service you can trust.</p>
+        <div class="hero-badges">
+            <span>✅ Same-Day Service</span>
+            <span>🔧 10+ Years Experience</span>
+            <span>⭐ 500+ Happy Customers</span>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-primary" onclick="openModal()">Book Repair Now</button>
+            <a href="https://wa.me/917004185195?text=Hello%20Sumit%20Refrigeration,%20I%20need%20appliance%20repair%20service." target="_blank" class="btn btn-whatsapp">Chat on WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- ═══════ SERVICES ═══════ -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Repair Services</h2>
+        <p class="section-subtitle">Fast, reliable, and affordable repair for all major home appliances.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="file:///D:/Sumit%20Refrigeration%20Cool/d09acc31dd39b97cd74e652251bcb641.jpg" alt="Air Conditioner Repair" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1559151496-5f4a7f90f8f4?auto=format&fit=crop&w=900&q=85'" />
+                <div class="service-content">
+                    <h3>❄️ Air Conditioner</h3>
+                    <p>Installation, gas filling, coil cleaning, and complete repair for all Split &amp; Window ACs.</p>
+                    <span class="service-tag">Same-Day Service</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=900&q=85" alt="Refrigerator Repair" loading="lazy" />
+                <div class="service-content">
+                    <h3>🧊 Refrigerator</h3>
+                    <p>Cooling issues, gas leakage, compressor repair, and maintenance for all brands.</p>
+                    <span class="service-tag">All Models</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?auto=format&fit=crop&w=600&q=80" alt="Washing Machine Repair" loading="lazy" />
+                <div class="service-content">
+                    <h3>🧺 Washing Machine</h3>
+                    <p>Top load, front load, semi-automatic — we fix draining, spinning, and motor issues.</p>
+                    <span class="service-tag">Quick Turnaround</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1585659722983-3a675dabf23d?auto=format&fit=crop&w=900&q=85" alt="Microwave & RO Repair" loading="lazy" />
+                <div class="service-content">
+                    <h3>🍽️ Microwave &amp; RO</h3>
+                    <p>Microwave oven repair, RO membrane replacement, filter changes, and electrical wiring.</p>
+                    <span class="service-tag">All Brands</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════ GALLERY ═══════ -->
+    <section class="gallery" id="gallery">
+        <h2 class="section-title">Our Work Gallery</h2>
+        <p class="section-subtitle">See some of the appliances we service every day.</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="file:///D:/Sumit%20Refrigeration%20Cool/d09acc31dd39b97cd74e652251bcb641.jpg" alt="AC technician at work" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1559151496-5f4a7f90f8f4?auto=format&fit=crop&w=900&q=85'" />
+                <div class="gallery-label">AC Service <span>Repair &amp; Maintenance</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?auto=format&fit=crop&w=900&q=85" alt="Refrigerator repair" loading="lazy" />
+                <div class="gallery-label">Refrigerator <span>Cooling &amp; Repair</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=900&q=85" alt="Washing machine" loading="lazy" />
+                <div class="gallery-label">Washing Machine <span>All Major Models</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1585659722983-3a675dabf23d?auto=format&fit=crop&w=900&q=85" alt="Microwave oven" loading="lazy" />
+                <div class="gallery-label">Microwave Oven <span>Repair &amp; Service</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════ WHY CHOOSE US ═══════ -->
+    <section class="why-choose-us" id="why-us">
+        <div class="why-container">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <p class="section-subtitle">We're committed to quality, transparency, and your satisfaction.</p>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="icon">👨‍🔧</div>
+                    <h3>Expert Technicians</h3>
+                    <p>Certified professionals with years of hands-on experience in appliance repair.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon">🚀</div>
+                    <h3>Same-Day Service</h3>
+                    <p>Quick response and doorstep repair across Jamshedpur — no long waits.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon">💰</div>
+                    <h3>Transparent Pricing</h3>
+                    <p>Fair inspection charges, genuine parts, and no hidden fees.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon">😊</div>
+                    <h3>100% Satisfaction</h3>
+                    <p>We stand behind our work with a commitment to long-lasting results.</p>
+                </div>
+            </div>
+
+            <div class="team-info">
+                <h3>👥 Meet Our Team</h3>
+                <div class="team-grid">
+                    <div>
+                        Jay Prakash Sharma <small>Founder</small>
+                    </div>
+                    <div>
+                        Vivek Kumar Sharma <small>Manager</small>
+                    </div>
+                    <div>
+                        Mithoon Kumar <small>Expert Technician</small>
+                    </div>
+                </div>
+                <p style="margin-top:1.2rem; color:var(--gray); max-width:600px; margin-left:auto; margin-right:auto;">
+                    We believe in honest communication, reliable workmanship, and building long-term relationships with every customer.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════ CONTACT ═══════ -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>📬 Get in Touch</h3>
+                <p><span class="contact-icon">👤</span> <strong>Owner:</strong> Jay Prakash Sharma</p>
+                <p><span class="contact-icon">👔</span> <strong>Manager:</strong> Vivek Kumar Sharma</p>
+                <p><span class="contact-icon">🔧</span> <strong>Technician:</strong> Mithoon Kumar</p>
+                <p><span class="contact-icon">📍</span> Janta Market, Near Gramin Bank,<br />Chhota Govindpur, Jamshedpur, Jharkhand 831015</p>
+                <p><span class="contact-icon">📞</span> <strong>Owner:</strong> +91 7004812099</p>
+                <p><span class="contact-icon">📞</span> <strong>Manager:</strong> +91 7004185195</p>
+                <p><span class="contact-icon">🕐</span> Mon–Sun: 8:00 AM – 8:00 PM</p>
+                <p><span class="Location-icon">📍</span> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.4489390613135!2d86.25708657476221!3d22.748714826493444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f607f428aa9133%3A0x21dc65adb58367ad!2sSUMIT%20REFRIGERATION!5e0!3m2!1sen!2sin!4v1786708161476!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></p>
+
+            </div>
+            <div class="contact-cta">
+                <h3>📱 Quick Connect</h3>
+                <p>Need urgent help? Reach out on WhatsApp for fastest response.</p>
+                <a href="https://wa.me/917004185195?text=Hello%20Sumit%20Refrigeration,%20I%20need%20urgent%20service." target="_blank" class="btn btn-whatsapp" style="width:100%;">Send WhatsApp Message</a>
+                <p style="margin-top:1rem; font-size:0.85rem; color:var(--gray);">Or call us directly for immediate assistance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════ MODAL ═══════ -->
+    <div class="modal" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()" aria-label="Close Modal">&times;</button>
+            <h2 id="modalTitle">📋 Book a Service</h2>
+            <p class="modal-sub">Fill in your details and
